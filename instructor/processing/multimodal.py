@@ -1102,7 +1102,7 @@ def extract_genai_multimodal_content(
     result: list[Union[types.Content, types.File]] = []  # noqa: UP007
     for content in contents:
         # Check for Files
-        if isinstance(content, types.File):
+        if isinstance(content, types.File) or isinstance(content, types.Part):
             result.append(content)
             continue
 
